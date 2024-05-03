@@ -16,19 +16,21 @@ import time
 from scapy.all import *
 import threading
 
-dest_ip = "172.20.10.7" #Change me - IP to monitor
-tcp_ports = [443, 80, 22, 53, 1900] #Change me - Ports to monitor
+dest_ip = "127.0.0.1" #Change me - IP to monitor
+tcp_ports = [443, 80, 22, 53] #Change me - Ports to monitor
 timer = 59 # Change me - Refresh in seconds
 data = []
 results = {}
 
+
 def count_packets(port):
+    #You can mnipulate the filter as you need with Berkeley Packet Filter (BPF)
     packets = sniff(filter=f"ip host {dest_ip} and tcp port {port}", timeout=timer)
     return len(packets)
 
 def save_to_xml():
-    file_path =  "SMS_Counter.xml"
-    root = ET.Element("SMS_Counts")
+    file_path =  "Packet_Counter.xml"
+    root = ET.Element("Packet_Counts")
     for entry in data:
         packet = ET.SubElement(root, "Counter_Info")
         packet.set("Timestamp", entry["timestamp"])
