@@ -1,2 +1,2 @@
 # AutOps
-This Repository is dedicated with automation tools supporting IT Operations
+This Repository is dedicated for tools supporting Automation of IT Operations
