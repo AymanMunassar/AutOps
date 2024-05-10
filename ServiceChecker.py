@@ -14,21 +14,7 @@ install columnar by running pip install columnar
 
 # Written by Ayman Munassar
 
-"""
-ServiceSniffer is a python script used to check a list of communication matrix tuples.
-It is doing this by establishing SSH connection to all your servers. 
-It will test the connection to all of external services listed on the communication matrix.
-At the end of execution, you will receive a brief result.
 
-Prerequists: 
-install paramiko by running pip install paramiko
-install pandas by running pip install pandas
-install columnar by running pip install columnar
-
--- Working on only on Linux
-"""
-
-# Written by Ayman Munassar
 
 import paramiko
 import pandas as pd
